@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/design_default_color_secondary"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/teal_700" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="안뇽하세요!!!!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textFontWeight="@integer/material_motion_duration_long_1"
+        android:textSize="30dp"
+        android:background="@color/design_default_color_background"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_weight="2"
+        android:background="@color/material_dynamic_secondary20"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
