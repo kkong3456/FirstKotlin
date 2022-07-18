@@ -1,0 +1,17 @@
+ConstraintLayoutView
+- 제약을 통해서 뷰를 배치하는 컨테이너 뷰
+- RelativeLayout에서 할 수 있는 모든 것이 가능함
+- 기능이 엄청 많다
+- 반대방향으로 동작하는 제약을 동시에 적용하면 두개 제약의 가운데 배치된다.
+
+1) 상대적 위치 배치(Relative layout)
+- layout_constraint+제약이름
+- B layout_constraintLeft_toLeftOf A
+ . B 왼쪽을 A의 왼쪽에 위치 시켜라
+ . B는 나 자신, A는 상대
+- A가 될수 있는 것들
+ . id 속성을 가진 뷰
+ . parent  ==> B layout_contraintLeft_toLeftOf parent
+
+
+##RelativeLayout이 핸드폰 성능을 많이 사용해서 비추천==> 요즘은 워낙 성능이 좋아져서....
