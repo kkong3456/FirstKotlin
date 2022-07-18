@@ -6,6 +6,8 @@ ConstraintLayoutView
 
 1) 상대적 위치 배치(Relative layout)
 - layout_constraint+제약이름
+- 가로측, 세로측 위치를 꼭 정의해야 한다
+ . layout_constraintLeft_toLeftOf, layout_constraintTop_toTopOf
 - B layout_constraintLeft_toLeftOf A
  . B 왼쪽을 A의 왼쪽에 위치 시켜라
  . B는 나 자신, A는 상대
@@ -13,5 +15,18 @@ ConstraintLayoutView
  . id 속성을 가진 뷰
  . parent  ==> B layout_contraintLeft_toLeftOf parent
 
+ 2) 여백
+ - 해당 방향으로 여백을 두기 위해서는 반드시 그쪽 방향의 제약이 있어야 한다, 아래 두개를 표기해야 parent로 부터 왼쪽으로 100dp 여백
+ - layout_marginLeft=100dp
+ - layout_constraintLeft_toLeftOf=parent
+ - marginLeft 면 layout_constraintLeft_ 로 시작, marginRight 면 layout_constraintRight_ 로 시작
+
+ 3)bios(치우침, Right,Left,Top,Bottom)
+ - layout_constraintHorizontal_bias = 값
+ - layout_constraintVertical_bias = 값
+ - 값
+  . 비율로 설정해 준다
+  . 1 인 경우 100% 치우친다.
+  . 0.5 인 경우 50% 치우친다. 즉 변화가 없다.
 
 ##RelativeLayout이 핸드폰 성능을 많이 사용해서 비추천==> 요즘은 워낙 성능이 좋아져서....
