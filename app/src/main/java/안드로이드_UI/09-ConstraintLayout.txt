@@ -33,4 +33,18 @@ ConstraintLayoutView
  - layout_constraintHorizontal_weight
  - layout_constraintVertical_weight
 
+ 5) 원형 위치 설정(Circular Position)
+ - layout_constraintCircle : 기준을 정한다
+ - layout_constraintCircleRadius : 반지
+ - layout_constraintCircleAngle : 각도
+
+ 6) Chain 속성 : 연속되어 있는 뷰의 배치를 어떻게 할 것인가 정의
+ - Spread : 기본, 균등한 간격으로...
+ - Spread_inside  : 최대한 사이를 벌린다.
+ - Packed  : 한 몸으로 본다. 사이에 공간이 없이 뭉친다.
+
+ 7) 언어의 특징
+ - LTR(Left To Right) => 글자를 적는 방향이 왼쪽에서 오른쪽, Start==Left,End==Right
+ - RTL(Right To Left ==> 아랍어, Start==Right, End==Left
+
  ##RelativeLayout이 핸드폰 성능을 많이 사용해서 비추천==> 요즘은 워낙 성능이 좋아져서....

@@ -1,0 +1,18 @@
+Gravity(중력)
+- 자식뷰를 가질수 없다. 컨테이너 뷰가 아니다. 그냥 속성임
+- gravity 속성이 부여된 뷰를 특정한 방향으로 끌어 당긴다.
+
+종류
+- gravity : Padding과 유사
+ . 속성이 부여된 뷰와 그 안에 있는 뷰와의 관계
+- layout_gravity : Margin 과 유사
+ . 속성이 부여된 뷰와 그 밖에 있는 뷰와이 관계
+
+값의 종류
+- top,bottom,left,right,start,end
+- center,center_vertical,center_horizontal
+- clip_vertical, clip_horizontal : 부모보다 큰경우 잘라낸다
+- fill,fill_vertical,fill_horizontal : 채운다??
+
+두가지 속성을 표시 가능
+- gravity="top|right"

@@ -7,7 +7,11 @@
         <entry key="app/src/main/res/layout/constraintlayout_1.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/constraintlayout_2.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/constraintlayout_3.xml" value="0.21875" />
-        <entry key="app/src/main/res/layout/constraintlayout_4.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/constraintlayout_4.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/constraintlayout_5.xml" value="0.2368659420289855" />
+        <entry key="app/src/main/res/layout/constraintlayout_6.xml" value="0.2368659420289855" />
+        <entry key="app/src/main/res/layout/framelayout.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/gravity.xml" value="0.25" />
         <entry key="app/src/main/res/layout/lenearlayout_06.xml" value="0.19202898550724637" />
         <entry key="app/src/main/res/layout/margin_padding.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/relativelayout.xml" value="0.25" />
