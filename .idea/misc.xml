@@ -16,6 +16,8 @@
         <entry key="app/src/main/res/layout/margin_padding.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/relativelayout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/relativelayout_2.xml" value="0.21458333333333332" />
+        <entry key="app/src/main/res/layout/resource.xml" value="0.5564768692936433" />
+        <entry key="app/src/main/res/layout/scrollview.xml" value="0.5" />
       </map>
     </option>
   </component>
@@ -24,5 +26,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.5" />
+      </ProjectState>
+    </option>
   </component>
 </project>
