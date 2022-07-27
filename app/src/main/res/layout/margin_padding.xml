@@ -14,8 +14,8 @@
 
         <TextView
             android:text="XXX"
-            android:layout_width="100"
-            android:layout_height="100"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@color/material_dynamic_primary70"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
