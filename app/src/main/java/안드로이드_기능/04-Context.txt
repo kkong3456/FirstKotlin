@@ -1,0 +1,15 @@
+Context-문맥, 앱의 흐름
+- Application Context
+ . 하나만 존재
+- Activity Context
+ . Activity 마다 존재,
+ . Context를 구현하고 기능을 추가하는게 Activity임
+
+
+- 책(Application Context)
+  Chapter1 (Activity Context)
+    Chapter1-1
+    Chapter1-2
+  Chapter2 (Activity Context)
+    Chapter2-1
+  Chapter3 (Activity Context)
