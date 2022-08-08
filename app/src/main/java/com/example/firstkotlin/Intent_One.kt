@@ -113,6 +113,19 @@ class Intent_One : AppCompatActivity() {
                 startActivityLauncher2.launch(intent)
             }
         }
+
+        // 명시적 intent + 이미지 URI 전달
+        (findViewById<TextView>(R.id.intent_six)).apply{
+            this.setOnClickListener{
+                var intent:Intent=Intent(this@Intent_One,Intent_Two::class.java).apply{
+                    var imageUri=Uri.parse("android.resource://"+packageName+"/drawable/khe_works1")
+                    this.action=Intent.ACTION_SEND
+                    this.putExtra(Intent.EXTRA_STREAM,imageUri)
+                    this.setType("image/*")
+                }
+                startActivity(intent)
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

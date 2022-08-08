@@ -1,9 +1,12 @@
 package com.example.firstkotlin
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 
 class Intent_Two : AppCompatActivity() {
@@ -27,6 +30,12 @@ class Intent_Two : AppCompatActivity() {
                 finish() //Intent_Two Activity 종료
             }
         }
+
+        val imageUri: ImageView =findViewById(R.id.imageView)
+        val uri=Uri.parse(
+            intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM).toString()
+        )
+        imageUri.setImageURI(uri)
 
     }
 }

@@ -1,0 +1,46 @@
+Activity Stack
+- 기본 : 후입선출 (LIFO, Last In, Last Out)
+- 스택은 가능하면 수정하지 말자, 꼬이면 원하는 화면으로 전환되지 않을 확률이 높다.
+- A화면 실행
+A (Forground)
+
+- B화면 실행
+B (Forground)
+A
+
+- C화면 실행
+C (Forground)
+B
+A
+
+- 뒤로가기 한 번
+B (Forground)
+A
+
+Stack관리
+- Manifest 활용
+ . launchMode
+ .. standard(LIFO)
+ .. singleTop : 해당 Activity가 Top(foreground)에 있는 경우만 해당 되며, 유저가
+               몇번을 클릭해도 한 번만 실행되는 모드
+ .. singleTask : 해당 Activity가 클릭되면 새로운 stack 구조가 추가되며, 그 새로운 스택에 Activity들을 쌓는다.
+                뒤로가기를 계속 하면 새로 생긴 스택의 액티비티들이 순차적으로 없어지고 처음 있던 스택으로 돌아간다.
+     유저 클릭순서 : A -> B -> C(singleTask) ->D -> E
+     뒤돌아가기버튼클릭 : E -> D -> C -> B ->A   즉, A,B는 기존 스택에, C,D,E는 신규 스택에 쌓인다.
+ .. singleInstance : singleTask와 마찬가지로 클릭되면 새로운 stack 구조가 추가되어 거기에 쌓이지만, 다른점은
+                     해당 스택에 다른 액티비티는 올수가 없고 자기만 존재함
+     유저 클릭순서 : A -> B -> C(singleInstance) ->D ->E
+     뒤돌아가기버튼클릭 : E -> D -> B -> A -> C  , 즉 A,B,D,E 는 동일한 스택에, C는 새로운 스택에 쌓인다.
+- Intent Flag 이용
+ . FLAG_ACTIVITY_NEW_TASK(sigleTask)
+ . FLAG_ACTIVITY_SINGLE_TOP(singleTop)
+ . FLAG_ACTIVITY_CLEAR_TOP
+ .. A B C -> A를 호출 -> A 만 남는다
+ . FLAG_ACTIVITY_NO_HISTORY : 해당 액티비티는 스택에 쌓이지 않는다. 뒤로가기시 안보이게 됨( 로딩화면등..)
+ . FLAG_ACTIVITY_REORDER_TO_FRONT
+ .. 해당 액티비티가 스택에 존재하고 호출될 경우 최상위 화면(foreground)로 보여진다.
+ .. A B C -> B호출 -> A C B
+
+- Intent Flag 사용법
+ . setFlags : 기존 플래그를 삭제하고 새로운 플래그
+ . addFlags : 기존 플래그에 추가함
