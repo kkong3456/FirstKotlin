@@ -1,0 +1,39 @@
+class Bank:
+    def __init__(self,xxx):
+        self.account=xxx
+
+    def save(self,xxx,money):
+        self.account=xxx
+        if money>=0:
+            self.account.balance+=money
+        else:
+            print("마이너스 금액은 저금이 안됩니다")
+
+    def withdraw(self,xxx,money):
+
+        self.account=xxx
+        if self.account.balance>=money:
+            self.account.balance-=money
+        else:
+            print("잔액이 부족합니다.")
+
+class Account:
+
+    def __init__(self,initMoney=0):
+        self.balance=initMoney
+
+    def checkBalance(self):
+        return self.balance
+
+
+account=Account(1000)
+print(account.checkBalance())
+
+bank=Bank(account)
+bank.save(account,1000)
+print(account.checkBalance())
+
+account_b=Account(10000)
+bank=Bank(account_b)
+bank.save(account_b,10000)
+print(account_b.checkBalance())

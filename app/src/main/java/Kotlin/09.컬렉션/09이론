@@ -1,0 +1,32 @@
+콜렉션
+- 콜렉션은 전부 배열처럼 크기가 고정되어 있지 않다.
+- 변경가능
+  . mutable : 변경가능
+  . immutable : 변경 불가능
+
+- 종류(각 mutable,immutable 6종)
+  . List
+  . Set
+  . Map
+
+- List
+  .immutable
+  .. 형태 : listOf<자료형>(값1,값2,값3...)
+  .. listOf<Int>(1,2,3)
+
+  .mutable
+  .. mutableListOf<자료형>(값1,값2,값3...)
+  .. val numbers=mutableListOf<Int>(1,2,3)
+- Set
+  . 집합 -> 동일한 값을 허락하지 않는다
+  . immutable
+  .. setOf<자료형>(값1,값2,값3...)
+  . mutable
+  .. mutableSetOf<자료형>(값1,값2...)
+- Map
+  . key-value 저장 방식
+  . immutable
+  .. mapOf<자료형,자료형>("키" to 값1, "키2" to 값2..)
+  .. mapOf<String,Int>("a" to 1,"b" to 2)
+  . mutable
+  ..mutableMapOf<String,String>("a" to "amen","b" to "bread")

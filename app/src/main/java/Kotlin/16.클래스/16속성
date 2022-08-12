@@ -1,0 +1,42 @@
+속성
+class User7{
+    var age:Int
+        get(){}
+        set(){}  //필요시 개발자가 getter와  setter를 재정의 해서 사용할수 있다
+    var name:String
+
+
+    constructor(age:Int,name:String){
+        this.age=age
+        this.name=name
+    }
+}
+
+var user7=User7(20,"홍길동")
+user7.name  ==>  코틀린의 getter자동호출
+user7.age=50  ==> 코틀린의 setter 호출
+
+2. late init : 나중에 초기화 하겠다
+
+class User7{
+    lateinit var age:Int
+    lateinit var name:String
+}
+- late init로 정의된 속성은 아래 제약조건이 있다.
+- var 로 정의된 속성에만 적용가능
+- 주생성자에는 사용할 수 없음
+- getter/setter 적용이 불가능
+- nullable에는 적용 안됨
+- 기초타입 속성에는 적용 불가능
+ . String 타입을 제외한 타입이 보통 기초타입이다
+- isInitailized로 사용전 확인해야 함/ 리턴타입은 Boolean
+
+더블콜론(::)
+- Refraction기능
+- 런타임시에 프로그램의 구조를 조사할 수 있는 기능
+- late init 프로퍼티의 초기화 여부는 런타임때가 아니면 알수 없다
+
+lazy
+- 초기화를 미루고 미루어서 변수(속성)을 사용하고자할때(접근할때) 순간에 초기화 하겠다.
+- lateinit는 사용하고자 할때 초기화 안되어 있을 수도 있다.
+- lazy로 선언된 변수는 선언시, init블록에서 초기화 하지 않는다.

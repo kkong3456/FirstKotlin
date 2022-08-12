@@ -1,0 +1,38 @@
+1.정수형
+ - Byte (-128 ~ 127)
+ - Short (-32768 ~ 32767)
+ - Int
+ - Long
+ - UByte,UShort,UInt,ULong : Unsigned, 양수만 표현
+
+ 2. 실수형
+  - Flot  => 4바이트
+  - Double  => 8바이트
+
+ 3. 논리형(참,거짓)
+  - Boolean
+  - True,False
+ 4. 문자형
+  -  한글자
+  - 'A','B'
+ 5. 문자열형
+  - 여러 글자
+  - "A", "AB"
+
+ #자료형 추론
+  var changeYes=100   #명시하지 않으면 Int형이다.
+  => var changeYes : Byte =100
+  => val changeYes : Byte = 100
+  => var changeYes : Int = 100
+
+  var xxx=10.0   //실수형은 명시하지 않으면 double로 추론됨
+
+ #추론힌드 주는 방법
+  var number1=100L => Long
+  var number3=0x100 => 16진수 표기된  Int으로 추론
+
+ #자료형 추론 사용 비추천
+
+ #팁
+  - 큰 숫자를 할당 할때 _로 자리수 구분을 할수 있다.
+  - val bigNumber : Int = 1_786_324_237

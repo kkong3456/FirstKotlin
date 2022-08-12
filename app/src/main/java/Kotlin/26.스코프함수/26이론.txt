@@ -1,0 +1,12 @@
+스코프함수
+- apply,also,run(with)/let
+- 표현식 : { 본문 }
+- val victor=Person().apply{
+    name="victro"
+}
+
+- apply /also -> 처리가 끝나면 인스턴스를 반환한다.
+- run(with)/let -> 처리가 끝나면 최종값을 반환한다.
+
+- apply / run(with) -> this 스코프 밖에 있는 변수 이름과 혼동할 수 있다.
+- run(with)/also -> it 스코프 밖에 있는 변수 이름과 혼동을 방지한다.???

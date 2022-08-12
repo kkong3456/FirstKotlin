@@ -1,0 +1,19 @@
+NULL
+ - 상태를 모름, 존재하지 않음
+ - 0 과는 다르다.
+ ->0 : 두루마리 휴지에 심지만 남은 상태, null : 두루마리 휴지가 없음
+ - Null을 대상으로 연산을 할수 없음(+,-..등등, 비교연산자는 가능)
+     Null+3=Null
+
+  코드 c=a+b
+   - a or b가 null인 경우 에러 발생
+   - 더하기 연산을 하기 전에, a or b가 널인지 확인
+
+  NullSafety (Null로 부터 안전해 지자)
+  - 코틀린의 가장 큰 특징중 하나
+
+  Null을 표현하는 방법
+  - val/var 변수명 : 자료형=값
+  - val number:Int?=null  ==> null가능
+  - val number:Int=10   ==> null불가능
+

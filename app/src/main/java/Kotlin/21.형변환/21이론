@@ -1,0 +1,14 @@
+형변환 => 타입 캐스트
+- 형변환이 항상 가능한것은 아니다. 그때 그때 확인해서 사용하면 된다.
+
+클래스
+- 클래스도 자료형이다.
+- val warrior:Warrior=Warrior()
+
+상속 클래스간의 자료형
+- DefenseWarior is Warior
+- HardAttackWarior is Warior
+- 자식 클래스는 부모 클래스(자료형)을 대신할 수 있다.
+
+자료형검사 +  형변환
+- is , as
