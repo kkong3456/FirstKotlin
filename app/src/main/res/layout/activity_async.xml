@@ -48,4 +48,15 @@
         app:layout_constraintTop_toBottomOf="@id/progressBar"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <TextView
+        android:id="@+id/shot"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="슛"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:background="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/progressBarText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
