@@ -1,0 +1,19 @@
+ListView
+- 기본적인 동작원리는 addView와 동일하다.
+- 어댑터(Adapter)
+ . 데이터와 뷰를 짝지어준다.
+ . 요청시 해당 번째 데이터를 준다.
+ . 데이터 변경되었을때 갱신해준다.
+
+- BaseAdapter 을 상속 받아서 아래..., 하지만 BaseAdapter만 사용하길 권장.
+ . ArrayAdapter : 배열타입
+ . CursorAdapter : 데이터 전용
+ . SimpleAdapter : 정적XML
+
+
+List type
+- AddView => ListView ==> RecycleView(권장)
+- RecycleView는 개발하기 쉽고, 성능이 좋다.
+- AddView,ListView는 비효율적이다.=> data의 개수 만큼 inflater를 해야 한다.
+ . inflater : view(XML)의 id를 통해서 Activity로 가져와서 연결시켜주는 동작
+ . inflater는 비용이 비싸다, 휴대폰의 자원을 많이 사용한다.

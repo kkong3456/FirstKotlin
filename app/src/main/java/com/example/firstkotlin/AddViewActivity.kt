@@ -24,6 +24,7 @@ class AddViewActivity : AppCompatActivity() {
         var container=findViewById<LinearLayoutCompat>(R.id.container)
         var inflater= LayoutInflater.from(this@AddViewActivity)
 
+        //inflater를 반복적으로 사용하는 것은 비효율 적이다.
         carList.forEach{
             val carItemView=inflater.inflate(R.layout.car_item,null)
             var carImage=carItemView.findViewById<ImageView>(R.id.carImage)
@@ -32,7 +33,7 @@ class AddViewActivity : AppCompatActivity() {
 
             carImage.setImageDrawable(resources.getDrawable(R.drawable.khe_works1,this.theme))
             nthCar.text=it.nthCar
-            nthEngin.text=it.nthEngin
+            nthEngin.text=it.nthEngine
 
             container.addView(carItemView)  //부모뷰안에 넣기
         }
@@ -40,4 +41,4 @@ class AddViewActivity : AppCompatActivity() {
     }
 }
 
-class Car(val nthCar:String,val nthEngin:String)
+class Car(val nthCar:String,val nthEngine:String)
