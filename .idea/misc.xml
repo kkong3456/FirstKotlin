@@ -25,6 +25,9 @@
         <entry key="app/src/main/res/layout/activity_recycler_view_homework.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_recycler_view_test.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_resource.xml" value="0.17101325352714836" />
+        <entry key="app/src/main/res/layout/activity_tablayout_pager.xml" value="0.21214868540344514" />
+        <entry key="app/src/main/res/layout/activity_tablayout_pager_new.xml" value="0.21214868540344514" />
+        <entry key="app/src/main/res/layout/activity_tablayout_pager_simple.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_thread.xml" value="0.17101325352714836" />
         <entry key="app/src/main/res/layout/activity_three.xml" value="0.1569046601111586" />
@@ -51,6 +54,7 @@
         <entry key="app/src/main/res/layout/relativelayout_2.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/resource.xml" value="0.5564768692936433" />
         <entry key="app/src/main/res/layout/scrollview.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/second_fragment.xml" value="0.21214868540344514" />
         <entry key="app/src/main/res/layout/staff_address.xml" value="0.1496365968362548" />
       </map>
     </option>
