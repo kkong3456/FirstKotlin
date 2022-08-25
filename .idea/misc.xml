@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_recycler_view_homework.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_recycler_view_test.xml" value="0.1496365968362548" />
         <entry key="app/src/main/res/layout/activity_resource.xml" value="0.17101325352714836" />
+        <entry key="app/src/main/res/layout/activity_retrofit.xml" value="0.13894826849080805" />
         <entry key="app/src/main/res/layout/activity_room.xml" value="0.1526293287729799" />
         <entry key="app/src/main/res/layout/activity_shared_preference.xml" value="0.13723813595553655" />
         <entry key="app/src/main/res/layout/activity_tablayout_pager.xml" value="0.21214868540344514" />
@@ -58,6 +59,7 @@
         <entry key="app/src/main/res/layout/scrollview.xml" value="0.5" />
         <entry key="app/src/main/res/layout/second_fragment.xml" value="0.21214868540344514" />
         <entry key="app/src/main/res/layout/staff_address.xml" value="0.1496365968362548" />
+        <entry key="app/src/main/res/layout/student_item.xml" value="0.165" />
       </map>
     </option>
   </component>

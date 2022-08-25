@@ -18,6 +18,12 @@
         android:theme="@style/Theme.FirstKotlin"
         tools:targetApi="31">
         <activity
+            android:name=".NetworkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".SharedPreferenceActivity"
             android:exported="false" />
         <activity
@@ -36,7 +42,7 @@
             android:name=".RecyclerViewTestActivity"
             android:exported="false" />
         <activity
-            android:name=".RoomActivity"
+            android:name=".RetrofitActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
