@@ -47,6 +47,55 @@ class RetrofitActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
+
+        findViewById<TextView>(R.id.createStudent).setOnClickListener {
+            Log.d("xxx","click start")
+            val student:HashMap<String,Any> = HashMap<String, Any>()
+            student.put("name","코카콜라")
+            student.put("intro","펩시")
+            student.put("age",52)
+
+            retrofitService.createStudent(student).enqueue(object:Callback<StudentFromServer>{
+                override fun onResponse(
+                    call: Call<StudentFromServer>,
+                    response: Response<StudentFromServer>
+                ) {
+//                    Log.d("xxx","response Messages is ${response.message()}")
+                    if(response.isSuccessful){
+
+                        val student=response.body()
+                        Log.d("xxx","등록한 학생은 : ${student!!.name}")
+                    }
+                }
+
+                override fun onFailure(call: Call<StudentFromServer>, t: Throwable) {
+                    Log.d("xxx","요청실패")
+                }
+            })
+        }
+        val student=StudentFromServer(
+            name="서울",
+            age=600,
+            intro="Welcome to Seoul"
+        )
+
+        findViewById<TextView>(R.id.easyCreateStudent).setOnClickListener{
+            retrofitService.easyCreateStudent(student).enqueue(object:Callback<StudentFromServer>{
+                override fun onResponse(
+                    call: Call<StudentFromServer>,
+                    response: Response<StudentFromServer>
+                ) {
+                    if(response.isSuccessful){
+                        Log.d("xxx","쉽게 등록된 학생은 : ${student!!.name}")
+                    }
+                }
+
+                override fun onFailure(call: Call<StudentFromServer>, t: Throwable) {
+                    Log.d("xxx","요청실패2")
+                }
+            })
+        }
+
     }
 }
 
@@ -66,8 +115,6 @@ class StudentListRecyclerViewAdapter(
         }
     }
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=inflater.inflate(R.layout.student_item,parent,false)
         return ViewHolder(view)
@@ -86,4 +133,6 @@ class StudentListRecyclerViewAdapter(
 
 class StudentFromServer(
     val id:Int,val name:String, val age:Int, val intro:String
-)
+){
+    constructor(name:String,age:Int,intro:String):this(0,name,age,intro)
+}
