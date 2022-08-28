@@ -4,6 +4,7 @@
     package="com.example.firstkotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -16,7 +17,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstKotlin"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".YoutubeItemActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PermissionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RetrofitActivity"
+            android:exported="false" />
         <activity
             android:name=".NetworkActivity"
             android:exported="false" />
@@ -42,7 +53,7 @@
             android:name=".RecyclerViewTestActivity"
             android:exported="false" />
         <activity
-            android:name=".RetrofitActivity"
+            android:name=".YoutubeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,15 +64,6 @@
         <activity
             android:name=".ListViewActivity"
             android:exported="false" />
-        <activity
-            android:name=".RecyclerViewActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".PhoneBookDetailActivity"
             android:exported="false" />
@@ -75,7 +77,7 @@
             android:name=".GlideActivity"
             android:exported="true" />
         <activity
-            android:name=".YoutubeActivity"
+            android:name=".RecyclerViewActivity"
             android:exported="true" />
         <activity
             android:name=".ResourceActivity"

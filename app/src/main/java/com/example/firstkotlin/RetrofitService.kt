@@ -19,4 +19,12 @@ interface RetrofitService {
     fun easyCreateStudent(
         @Body student:StudentFromServer
     ):Call<StudentFromServer>
+
+    //YouTube
+    @GET("youtube/list/")
+    fun getYoutubeItemList():Call<ArrayList<YoutubeItem>>
 }
+
+class YoutubeItem(
+    val id:Int,val title:String, val content:String,val video:String, val thumbnail:String
+)
