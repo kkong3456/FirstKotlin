@@ -24,6 +24,7 @@ class YoutubeItemActivity : AppCompatActivity() {
     }
 
     // Exoplayer
+    //  구글에서 만듦
     // - 기능이 다양함
     // - 사용이 쉽다
     // - DRM

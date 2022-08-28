@@ -20,8 +20,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MellonDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".YoutubeActivity"
+            android:exported="false" />
+        <activity
             android:name=".YoutubeItemActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PermissionActivity"
             android:exported="false" />
@@ -53,7 +60,7 @@
             android:name=".RecyclerViewTestActivity"
             android:exported="false" />
         <activity
-            android:name=".YoutubeActivity"
+            android:name=".MellonActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

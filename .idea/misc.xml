@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/layout/activity_intent_two.xml" value="0.1569046601111586" />
         <entry key="app/src/main/res/layout/activity_list_view.xml" value="0.17699871740059855" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26939086914062504" />
+        <entry key="app/src/main/res/layout/activity_mellon.xml" value="0.18896964514749892" />
         <entry key="app/src/main/res/layout/activity_one.xml" value="0.1569046601111586" />
         <entry key="app/src/main/res/layout/activity_permission.xml" value="0.17571611799914494" />
         <entry key="app/src/main/res/layout/activity_phone_book.xml" value="0.17101325352714836" />
@@ -56,6 +57,7 @@
         <entry key="app/src/main/res/layout/gravity.xml" value="0.25" />
         <entry key="app/src/main/res/layout/lenearlayout_06.xml" value="0.19202898550724637" />
         <entry key="app/src/main/res/layout/margin_padding.xml" value="0.21458333333333332" />
+        <entry key="app/src/main/res/layout/melon_item.xml" value="0.12270200940572894" />
         <entry key="app/src/main/res/layout/phonebook_item.xml" value="0.17101325352714836" />
         <entry key="app/src/main/res/layout/relativelayout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/relativelayout_2.xml" value="0.21458333333333332" />
