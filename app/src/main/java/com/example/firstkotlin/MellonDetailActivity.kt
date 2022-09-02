@@ -16,8 +16,8 @@ class MellonDetailActivity : AppCompatActivity() {
         set(value){
             if(value <= 0){
                 field=0
-            }else if(value>=melonItemList.size-1){
-                field=melonItemList.size-1
+            }else if(value>=melonItemList.size){
+                field=melonItemList.size
             }else{
                 field=value
             }
