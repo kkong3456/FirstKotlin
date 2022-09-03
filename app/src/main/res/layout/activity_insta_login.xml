@@ -33,6 +33,7 @@
             android:layout_width="356dp"
             android:background="@drawable/insta_input_bg"
             android:hint="비밀번호"
+            android:inputType="textPassword"
             android:textColorHint="#707070"
             android:textSize="18dp"
             android:paddingLeft="27dp"

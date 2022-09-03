@@ -32,13 +32,13 @@ interface RetrofitService {
     @FormUrlEncoded
     fun instaLogin(
         @FieldMap params:HashMap<String,Any>
-    ):Call<UserToken>
+    ):Call<User>
 
     @POST("user/signup/")
     @FormUrlEncoded
     fun instaJoin(
         @FieldMap param:HashMap<String,Any>
-    ):Call<UserToken>
+    ):Call<User>
 }
 
 class YoutubeItem(
@@ -49,6 +49,6 @@ class MelonItem(
     val id:Int, val title:String, val song:String, val thumbnail:String
 ):Serializable
 
-class UserToken(
-    val username:String,val token:String
+class User(
+    val username:String,val token:String,val id:Int
 )

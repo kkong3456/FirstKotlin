@@ -1,6 +1,8 @@
 package com.example.firstkotlin
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -39,13 +41,21 @@ class InstaLoginActivity : AppCompatActivity() {
             user.put("username",username)
             user.put("password",password)
 
-            retrofitService.instaLogin(user).enqueue(object:Callback<UserToken>{
-                override fun onResponse(call: Call<UserToken>, response: Response<UserToken>) {
+            retrofitService.instaLogin(user).enqueue(object:Callback<User>{
+                override fun onResponse(call: Call<User>, response: Response<User>) {
                     if(response.isSuccessful){
-                        val token:UserToken?=response.body()
+                        val user:User?=response.body()
+                        Log.d("xxx","userToken is ${user?.token}")
+                        val sharedPreferences=getSharedPreferences("user_info", Context.MODE_PRIVATE)
+                        val editor:SharedPreferences.Editor=sharedPreferences.edit()
+                        editor.putString("token",user?.token)
+                        editor.putString("token",user?.id.toString())
+                        editor.commit()
+
+                        startActivity(Intent(this@InstaLoginActivity,InstaMainActivity::class.java))
                     }
                 }
-                override fun onFailure(call: Call<UserToken>, t: Throwable) {
+                override fun onFailure(call: Call<User>, t: Throwable) {
                     Log.d("xxx","서버와 통신에 실패하였습니다.")
                 }
             })

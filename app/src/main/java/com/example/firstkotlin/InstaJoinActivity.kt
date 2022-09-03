@@ -1,6 +1,8 @@
 package com.example.firstkotlin
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
@@ -42,18 +44,22 @@ class InstaJoinActivity : AppCompatActivity() {
             user.put("password1",password11)
             user.put("password2",password22)
 
-            retrofitService.instaJoin(user).enqueue(object: Callback<UserToken>{
-                override fun onResponse(call: Call<UserToken>, response: Response<UserToken>) {
-                    Log.d("xxx","통신성공")
-//                    response.setContentType("text/html;charset=utf-8");
-
+            retrofitService.instaJoin(user).enqueue(object: Callback<User>{
+                override fun onResponse(call: Call<User>, response: Response<User>) {
                     if(response.isSuccessful){
-                        val userToken=response.body()
-                        Log.d("xxx","userToken is $userToken")
+                        val user=response.body()
+//                        Log.d("xxx","userToken is $userToken")
+                        val sharedPreferences=getSharedPreferences("user_info", Context.MODE_PRIVATE)
+                        val editor:SharedPreferences.Editor=sharedPreferences.edit()
+                        editor.putString("token",user?.token)
+                        editor.putString("user_id",user?.id.toString() )
+                        editor.commit()
+
+                        startActivity(Intent(this@InstaJoinActivity,InstaMainActivity::class.java))
                     }
                 }
 
-                override fun onFailure(call: Call<UserToken>, t: Throwable) {
+                override fun onFailure(call: Call<User>, t: Throwable) {
                     Log.d("xxx","서버와 통신에 실패하였습니다.")
                 }
             })
