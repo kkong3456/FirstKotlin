@@ -39,6 +39,9 @@ interface RetrofitService {
     fun instaJoin(
         @FieldMap param:HashMap<String,Any>
     ):Call<User>
+
+    @GET("instagram/post/list/all/")
+    fun getInstagramPosts():Call<ArrayList<InstaPost>>
 }
 
 class YoutubeItem(
@@ -51,4 +54,12 @@ class MelonItem(
 
 class User(
     val username:String,val token:String,val id:Int
+)
+
+class InstaPost(
+    val content:String, val image:String, val owner_profile:OwnerProfile
+)
+
+class OwnerProfile(
+    val username:String, val image:String
 )
