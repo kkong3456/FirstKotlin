@@ -57,9 +57,9 @@ class User(
 )
 
 class InstaPost(
-    val content:String, val image:String, val owner_profile:OwnerProfile
+    val content:String, val image:String?, val owner_profile:OwnerProfile
 )
 
 class OwnerProfile(
-    val username:String, val image:String
+    val username:String, val image:String?
 )
