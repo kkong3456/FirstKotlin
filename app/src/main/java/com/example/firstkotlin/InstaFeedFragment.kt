@@ -84,7 +84,7 @@ class PostRecyclerViewAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(inflater.inflate(R.layout.i   nsta_feed_post_item,parent,false))
+        return ViewHolder(inflater.inflate(R.layout.insta_feed_post_item,parent,false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
