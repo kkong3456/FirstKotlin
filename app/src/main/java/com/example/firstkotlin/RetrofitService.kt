@@ -1,5 +1,7 @@
 package com.example.firstkotlin
 
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 import java.io.Serializable
@@ -42,6 +44,20 @@ interface RetrofitService {
 
     @GET("instagram/post/list/all/")
     fun getInstagramPosts():Call<ArrayList<InstaPost>>
+
+    @POST("instagram/post/like/{post_id}")
+    fun postLike(
+        @Path("post_id") post_id:Int
+    ):Call<Any>
+
+    @Multipart //이미지, 파일
+    @POST("instagram/post/")
+    fun uploadPost(
+        @HeaderMap headers:Map<String, String>, //header에 사용자 구분을 위한 토큰을 보낸다.
+        @Part image: MultipartBody.Part,        //이미지 보낼때
+        @Part("content") content: RequestBody   //content 보낼때
+    )
+
 }
 
 class YoutubeItem(
@@ -57,7 +73,7 @@ class User(
 )
 
 class InstaPost(
-    val content:String, val image:String?, val owner_profile:OwnerProfile
+    val id:Int, val content:String, val image:String?, val owner_profile:OwnerProfile
 )
 
 class OwnerProfile(

@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -19,6 +22,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class InstaFeedFragment: Fragment() {
+    lateinit var retrofitService: RetrofitService
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,6 +32,19 @@ class InstaFeedFragment: Fragment() {
         return inflater.inflate(R.layout.insta_feed_fragment,container,false)
     }
 
+    fun postLike(post_id:Int){
+        Log.d("xxx","postLike execute ${post_id}")
+        retrofitService.postLike(post_id).enqueue(object:Callback<Any>{
+
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                Toast.makeText(activity,"좋아요",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                Toast.makeText(activity,"좋아요 실패",Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val feedListView=view.findViewById<RecyclerView>(R.id.feed_list)
 
@@ -35,7 +53,7 @@ class InstaFeedFragment: Fragment() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val retrofitService=retrofit.create(RetrofitService::class.java)
+        retrofitService=retrofit.create(RetrofitService::class.java)
         retrofitService.getInstagramPosts().enqueue(object :Callback<ArrayList<InstaPost>>{
             override fun onResponse(
                 call: Call<ArrayList<InstaPost>>,
@@ -48,8 +66,9 @@ class InstaFeedFragment: Fragment() {
                     postRecyclerView.adapter=PostRecyclerViewAdapter(
                         postList!!,
                         LayoutInflater.from(activity),
-                        Glide.with(activity!!)
-
+                        Glide.with(activity!!),
+                        this@InstaFeedFragment,
+                        activity as (InstaMainActivity)
                     )
                 }
             }
@@ -66,7 +85,9 @@ class InstaFeedFragment: Fragment() {
 class PostRecyclerViewAdapter(
     val postList:ArrayList<InstaPost>,
     val inflater: LayoutInflater,
-    val glide:RequestManager
+    val glide:RequestManager,
+    val instaFeedFragment: InstaFeedFragment,
+    val activity: InstaMainActivity
 ):RecyclerView.Adapter<PostRecyclerViewAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
@@ -75,11 +96,33 @@ class PostRecyclerViewAdapter(
         val postImg:ImageView
         val postContent:TextView
 
+        val postLayer:ImageView
+        val postHeart:ImageView
+
         init{
             ownerImg=itemView.findViewById(R.id.owner_img)
             ownerUsername=itemView.findViewById(R.id.owner_username)
             postImg=itemView.findViewById(R.id.post_img)
             postContent=itemView.findViewById(R.id.post_content)
+
+            postLayer=itemView.findViewById<ImageView>(R.id.post_layer)
+            postHeart=itemView.findViewById<ImageView>(R.id.post_heart)
+
+            postImg.setOnClickListener {
+               instaFeedFragment.postLike(postList.get(adapterPosition).id)
+               Thread{
+                   activity.runOnUiThread {
+                       postLayer.visibility=VISIBLE
+                       postHeart.visibility=VISIBLE
+                   }
+
+                       Thread.sleep(2000)
+                   activity.runOnUiThread {
+                       postLayer.visibility= INVISIBLE
+                       postHeart.visibility= INVISIBLE
+                   }
+               }.start()
+            }
         }
     }
 
