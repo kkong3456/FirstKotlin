@@ -17,6 +17,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import okhttp3.MediaType
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,7 +25,7 @@ import java.io.File
 
 class InstaPostFragment:Fragment(){
     var imageUri: Uri? =null
-    var content:String=""
+    var contentInput:String=""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,13 +55,22 @@ class InstaPostFragment:Fragment(){
         )
 
         view.findViewById<EditText>(R.id.selected_content).doAfterTextChanged {
-            content=it.toString()
+            contentInput=it.toString()
         }
 
         var retrofit= Retrofit.Builder().baseUrl("http://mellowcode.org")
             .addConverterFactory(GsonConverterFactory.create()).build()
 
         val retrofitService=retrofit.create(RetrofitService::class.java)
+        view.findViewById<TextView>(R.id.upload).setOnClickListener {
+            var file=getRealFile(imageUri!!)
+            var requestFile=RequestBody.create(MediaType.parse((activity as InstaMainActivity).contentResolver.getType(imageUri!!)
+            ),file)
+
+            var content=RequestBody.create(MultipartBody.FORM,contentInput)
+            var header=HashMap<String,String>()
+            header.put("Authorization","")
+        }
 
 //        view.findViewById<TextView>(R.id.upload).setOnClickListener {
 //            val file=getRealFile(imageUri!!)
